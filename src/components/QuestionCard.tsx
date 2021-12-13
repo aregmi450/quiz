@@ -1,5 +1,6 @@
 import React from "react";
 import { AnswerObject } from "../App";
+import "../index.css";
 
 type Props = {
     question: string;
@@ -19,14 +20,15 @@ const QuestionCard: React.FC<Props> = ({
     totalQuestions
 }) => (
     <div>
-        <p className="number">
+        <p className = "text-3xl font-bold m-5">
             Question: {questionNumber} / {totalQuestions}            
         </p>
-        <p dangerouslySetInnerHTML={{ __html: question }} />
-        <div>
+        <p dangerouslySetInnerHTML={{ __html: question }}
+        className="font-sans text-3xl text-red-700 m-5 align-center" />
+        <div className="border-solid shadow-black ">
             {answers.map(answer =>(
                 <div key={answer}>
-                    <button disabled={!!userAnswer} 
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-5 rounded py-2 px-4 "  disabled={!!userAnswer} 
                     value = {answer} onClick={callback}>
                         <span dangerouslySetInnerHTML={{ __html: answer }} />
                     </button>

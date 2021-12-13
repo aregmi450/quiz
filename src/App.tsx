@@ -5,6 +5,8 @@ import {fetchQuizQuestions} from './API';
 import QuestionCard from './components/QuestionCard';
 //TYPES
 import {QuestionState, Difficulty } from './API';
+import "./index.css";
+
 
 export type AnswerObject = {
   question: string;
@@ -74,17 +76,17 @@ const nextQuestion = () => {
   }
 }
 return (
-    <div className="App">
-      <h1> QUIZ ME </h1>
+    <div className= "App">
+    <h1 className="font-sans text-5xl text-green-600 m-5 align-center" > QUIZ ME </h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className='start' onClick={startTrivia}>
+      <button className='bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-r m-5 text-center' onClick={startTrivia}>
           Start
         </button>
       ): null} 
-     {!gameOver ? <p className='score'>Score:</p> : null }
-      {loading && <p>Loading Questions ...</p>}
+    {!gameOver ? <p className='bg-yellow-500 hover:bg-orange-700 text-white py-2 px-4 rounded inline-flex items-center m-5'>Score: {score}</p> : null }
+      {loading && <p className='font-sans text-5xl text-blue-700 m-5 align-center'>Loading Questions ...</p>}
       {!loading && !gameOver && (
-      <QuestionCard
+      <QuestionCard 
       questionNumber={number + 1}
       totalQuestions={TOTAL_QUESTIONS}
       question={questions[number].question}
@@ -97,7 +99,7 @@ return (
       !loading && 
       userAnswers.length === number + 1 && 
       number !== TOTAL_QUESTIONS - 1 ? (
-      <button className='next' onClick={nextQuestion}> Next
+        <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r m-5' onClick={nextQuestion}> Next
       </button>
       ): null}
     </div>
