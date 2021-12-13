@@ -1,4 +1,6 @@
 This is a quiz app made with the help of Open Trivia Database with the help of freecodecamp course on project with typescript. I have used TailwindCSS instead of other styling components in the project. 
+Run the project here- https://openquizzer.netlify.app/
+
 Some of the screenshots of the project are placed as below: 
 ![Home Screen](https://user-images.githubusercontent.com/46434570/145789809-07380e9a-80fb-4183-9215-a33a29903f79.png)
 ![App in Action](https://user-images.githubusercontent.com/46434570/145790202-7b581cfe-e816-4bc5-953e-d8ff5bcb7bea.png)
